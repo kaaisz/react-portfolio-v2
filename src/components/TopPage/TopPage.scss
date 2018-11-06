@@ -1,6 +1,9 @@
-
+@charset 'UTF-8';
 .TopPage{
+    display: flex;
     height:100vh;
     text-align: center;
-    background: gray;
+    background:white;
+    align-items: center;
+    justify-content: center;
 }

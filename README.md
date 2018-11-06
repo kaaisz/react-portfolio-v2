@@ -46,9 +46,9 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 
 #### inside of each jsx file
 
-1. ```import React, { Component } from 'react'```
+1. `import React, { Component } from 'react'`
 このコードがいつも1行目に必要。これがReactを呼び出している印
-2. 1.のコードの下にimportしたいファイル(scssやimg, svg)を記述。```<link rel="">```と同じようなことをここでやるイメージ
+2. 1.のコードの下にimportしたいファイル(scssやimg, svg)を記述。`<link rel="">`と同じようなことをここでやるイメージ
 3. Reactで描画したい要素を下記の中に記述
    ```
    **header.jsx**
@@ -77,7 +77,7 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 #### inside of App.js
 - ページの親の役目
     - Javaで言うSuperclassがApp.js, Subclassが各コンポーネント
-- ```import Header from './components/Header/Header.jsx';```と```<Header />```のコンビがブラウザでheaderの中身を描画している
+- `import Header from './components/Header/Header.jsx';` と `<Header />`のコンビがブラウザでheaderの中身を描画している
 - Toppage, Footerも同様
 
 #### Sass

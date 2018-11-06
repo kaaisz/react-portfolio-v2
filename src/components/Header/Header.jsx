@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './Header.scss';
 
-export default class Header extends Component{
-    render(){
-        return(
+export default class Header extends Component {
+    render() {
+        return (
             //contents which you want to appear on browser
-            <header className="App-header">
+            <header className="Header">
                 <h1 className="Title">Artworks by SZDP</h1>
                 <ul className="Menu">
                     <li>Top</li>

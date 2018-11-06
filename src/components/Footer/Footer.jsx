@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Footer.scss';
 
-export default class Footer extends Component{
-    render(){
-        return(
+export default class Footer extends Component {
+    render() {
+        return (
             //contents which you want to appear on browser
-            <footer className="App-footer">
+            <footer className="Footer">
                 <div className="footer-social">
                     <ul>
                         <li><a href="http://">(LinkedIn)</a></li>
