@@ -8,20 +8,24 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1 className="title">Artworks by SZDP</h1>
+          <ul className="nav-menu">
+            <li>Top</li>
+            <li>Works</li>
+            <li>Bio</li>
+            <li>Contact</li>
+            <li><a href="http://suzydp.net">suzydp.net</a></li>
+          </ul>
         </header>
         <footer className="App-footer">
+          <div className="footer-social">
+            <ul>
+              <li>(LinkedIn)</li>
+              <li>(facebook)</li>
+              <li>(Instagram)</li>
+              <li>(dribbble)</li>
+            </ul>
+          </div>
           <p className="copyright">Copyright&copy; SZDP All rights reserved.</p>
         </footer>
       </div>

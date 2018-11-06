@@ -1,16 +1,17 @@
 
 #React portfolio v2
 
-##1. Run "Create react app"
+##1. Run ```Create react app```
 
 https://reactjs.org/docs/introducing-jsx.html
 
-##3. Install config files
+##2. Install ```node-sass``` to activate Sass files
 
-Eject the build scripts ```$ npm run eject```
-Install & configure Sass loaders ```$ npm i sass-loader node-sass — save```
-(optional) Install & configure sass foundaiton ```$ npm i -D foundation-sites``` 
-\*refered from : https://benmarshall.me/integrate-sass-create-react-app/
+```$ npm install node-sass```  
+or  
+```$ yarn install node-sass```
+
+That's it for installing sass! It's super easy🌟
 
 ### Useful snippets on Editor to build react
 
@@ -19,6 +20,9 @@ Install & configure Sass loaders ```$ npm i sass-loader node-sass — save``
 - Material Icon Theme
 - ESLint
 
+##3. Make details of App.js
+[See this link to checkout the code](http://codehere)
+
 ##4. Componentization from App.js to Header, Footer and Toppage
 
 App.jsから要素を下記のように分割してコンポーネント化する
@@ -26,7 +30,7 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 - App.js -- Header.jsx  
 　　　　　|_ Toppage.jsx
 　　　　　|_ Footer.jsx
-- App.jsは全体をオーガナイズする
+- App.jsは全体をオーガナイズする役目
 - Make file of index.scss at the same time
 
 -----------
