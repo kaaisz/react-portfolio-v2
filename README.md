@@ -1,11 +1,11 @@
 
 # React portfolio v2
 
-## 1. Run ```Create react app```
+## 1-1. Run ```Create react app```
 
 https://reactjs.org/docs/introducing-jsx.html
 
-## 2. Install ```node-sass``` to activate Sass files
+## 1-2. Install ```node-sass``` to activate Sass files
 
 ```$ npm install node-sass```  
 or  
@@ -20,10 +20,11 @@ That's it for installing sass! It's super easy🌟
 - Material Icon Theme
 - ESLint
 
-## 3. Make details of App.js
+## 2. Make details of App.js
+
 [See this link to checkout the code](http://codehere)
 
-## 4. Componentization from App.js to Header, Footer and Toppage
+## 3. Componentization from App.js to Header, Footer and Toppage
 
 App.jsから要素を下記のように分割してコンポーネント化する。  
 **ファイルは「components」というディレクトリを作りそこへ格納する**
@@ -44,7 +45,7 @@ App.jsから要素を下記のように分割してコンポーネント化す�
   - JSXはオブジェクトの代わりを成している - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects)
   - JSXを使わなくてもreactは機能するが、JSXを使うほうがよりセキュリティの質が向上する(DOMがJSXを描画する前に各々の値をセキュアなものに変換する) - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 
-#### inside of each jsx file
+### inside of each jsx file
 
 1. `import React, { Component } from 'react'`
 このコードがいつも1行目に必要。これがReactを呼び出している印
@@ -75,15 +76,23 @@ App.jsから要素を下記のように分割してコンポーネント化す�
    - render()してreturnされるものがブラウザで表示される内容になる
 
 #### inside of App.js
+
 - ページの親の役目
-    - Javaで言うSuperclassがApp.js, Subclassが各コンポーネント
+        - Javaで言うSuperclassがApp.js, Subclassが各コンポーネント
 - `import Header from './components/Header/Header.jsx';` と `<Header />`のコンビがブラウザでheaderの中身を描画している
 - Toppage, Footerも同様
 
 #### Sass
+
 - 各コンポーネントディレクトリの中に収める
 - 全体に共通の要素としたいものはApp.scssに書けばOK(?*要確認)
 
+## 4. Add ArtWorks component
+
+- TopPage, Header, Footerと同列にArtWorksコンポーネントを作成
+- 「TopPageの子要素」として、TopPageとArtWorksコンポーネントをリンクさせる
+  - toppage.jsxに`import ArtWorks from '../ArtWorks/ArtWorks.jsx';`を記述し、`<ArtWorks />`を`<p></p>`にreplaceする
+  
 -----------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

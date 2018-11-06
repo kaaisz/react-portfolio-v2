@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArtWorks from '../ArtWorks/ArtWorks.jsx';
 import './TopPage.scss';
 
 export default class TopPage extends Component {
@@ -6,7 +7,7 @@ export default class TopPage extends Component {
         return (
             //contents which you want to appear on browser
             <div className="TopPage">
-                <p>This is the content of toppage.</p>
+                <ArtWorks />{/*replace here*/}
             </div>
         )
     }
