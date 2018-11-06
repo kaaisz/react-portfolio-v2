@@ -1,0 +1,22 @@
+.App-footer{
+    padding:2em;
+    background: #eee;
+    text-align: left;
+    ul{
+        display: flex;
+        padding: 0;
+    }
+
+    li{
+        margin-right:1.5em;
+        list-style: none;
+    }
+
+    li, a{
+        color:black;
+    }
+
+    a:hover{
+        border-bottom:1px solid black;
+    }
+}

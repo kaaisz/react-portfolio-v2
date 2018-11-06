@@ -1,11 +1,11 @@
 
-#React portfolio v2
+# React portfolio v2
 
-##1. Run ```Create react app```
+## 1. Run ```Create react app```
 
 https://reactjs.org/docs/introducing-jsx.html
 
-##2. Install ```node-sass``` to activate Sass files
+## 2. Install ```node-sass``` to activate Sass files
 
 ```$ npm install node-sass```  
 or  
@@ -20,18 +20,69 @@ That's it for installing sass! It's super easy🌟
 - Material Icon Theme
 - ESLint
 
-##3. Make details of App.js
+## 3. Make details of App.js
 [See this link to checkout the code](http://codehere)
 
-##4. Componentization from App.js to Header, Footer and Toppage
+## 4. Componentization from App.js to Header, Footer and Toppage
 
-App.jsから要素を下記のように分割してコンポーネント化する
+App.jsから要素を下記のように分割してコンポーネント化する。  
+**ファイルは「components」というディレクトリを作りそこへ格納する**
 
-- App.js -- Header.jsx  
-　　　　　|_ Toppage.jsx
-　　　　　|_ Footer.jsx
+- ファイル構成
+
+```
+- App.js 
+- components -- Header.jsx, Header.scss 
+　　　        |_ Toppage.jsx, Toppage.scss
+　　　        |_ Footer.jsx, Footer.scss
+```
+
 - App.jsは全体をオーガナイズする役目
-- Make file of index.scss at the same time
+- .scssファイルは各コンポーネントのディレクトリ内に作成する
+- What is JSX? See the link : [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)  
+  - JSXはHTMLでも文字列でもない。 - [link](https://reactjs.org/docs/introducing-jsx.html#why-jsx)
+  - JSXはオブジェクトの代わりを成している - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects)
+  - JSXを使わなくてもreactは機能するが、JSXを使うほうがよりセキュリティの質が向上する(DOMがJSXを描画する前に各々の値をセキュアなものに変換する) - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
+
+#### inside of each jsx file
+
+1. ```import React, { Component } from 'react'```
+このコードがいつも1行目に必要。これがReactを呼び出している印
+2. 1.のコードの下にimportしたいファイル(scssやimg, svg)を記述。```<link rel="">```と同じようなことをここでやるイメージ
+3. Reactで描画したい要素を下記の中に記述
+   ```
+   **header.jsx**
+   export default class Header extends 
+   Component{
+        render(){
+            return(
+                //contents which you want to appear on browser
+                <header className="Header">
+                    <h1 className="Title">Artworks by SZDP</h1>
+                    <ul className="Menu">
+                        <li>Top</li>
+                        <li>Works</li>
+                        <li>Bio</li>
+                        <li>Contact</li>
+                        <li><a href="http://suzydp.net">suzydp.net</a></li>
+                    </ul>
+                </header>
+            )
+        }
+    }
+   ```
+   - Component化したい要素をexportしている
+   - render()してreturnされるものがブラウザで表示される内容になる
+
+#### inside of App.js
+- ページの親の役目
+    - Javaで言うSuperclassがApp.js, Subclassが各コンポーネント
+- ```import Header from './components/Header/Header.jsx';```と```<Header />```のコンビがブラウザでheaderの中身を描画している
+- Toppage, Footerも同様
+
+#### Sass
+- 各コンポーネントディレクトリの中に収める
+- 全体に共通の要素としたいものはApp.scssに書けばOK(?*要確認)
 
 -----------
 
