@@ -1,3 +1,36 @@
+
+#React portfolio v2
+
+##1. Run "Create react app"
+
+https://reactjs.org/docs/introducing-jsx.html
+
+##3. Install config files
+
+Eject the build scripts ```$ npm run eject```
+Install & configure Sass loaders ```$ npm i sass-loader node-sass — save```
+(optional) Install & configure sass foundaiton ```$ npm i -D foundation-sites``` 
+\*refered from : https://benmarshall.me/integrate-sass-create-react-app/
+
+### Useful snippets on Editor to build react
+
+- React-Native/React/Redux snippets for es6/es7
+- Bracket Pair Colorizer
+- Material Icon Theme
+- ESLint
+
+##4. Componentization from App.js to Header, Footer and Toppage
+
+App.jsから要素を下記のように分割してコンポーネント化する
+
+- App.js -- Header.jsx  
+　　　　　|_ Toppage.jsx
+　　　　　|_ Footer.jsx
+- App.jsは全体をオーガナイズする
+- Make file of index.scss at the same time
+
+-----------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
