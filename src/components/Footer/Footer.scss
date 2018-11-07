@@ -1,7 +1,8 @@
 .Footer{
     padding:2em;
-    background: #eee;
+    background: transparent;
     text-align: left;
+    border-top:2px solid rgba(44, 40, 52, .4);
     ul{
         display: flex;
         padding: 0;

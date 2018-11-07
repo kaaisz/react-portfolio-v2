@@ -1,12 +1,13 @@
 .Header{
   width:100%;
-  background-color: #282c34;
+  background-color: transparent;
   height:80px;
   display: flex;
   /* align-items: center; */
   font-size: calc(10px + 1vmin);
-  color: white;
+  color: #282c34;
   padding:20px;
+  border-bottom:2px solid rgba(40, 44, 52, .4);
 
   h1{
       margin:0;
