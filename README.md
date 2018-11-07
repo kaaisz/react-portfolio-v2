@@ -26,8 +26,7 @@ That's it for installing sass! It's super easy🌟
 
 ## 3. Componentization from App.js to Header, Footer and Toppage
 
-App.jsから要素を下記のように分割してコンポーネント化する。  
-**ファイルは「components」というディレクトリを作りそこへ格納する**
+App.jsから要素を下記のように分割してコンポーネント化する。**ファイルは「components」というディレクトリを作りそこへ格納する**
 
 - ファイル構成
 
@@ -43,13 +42,13 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 - What is JSX? See the link : [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)  
   - JSXはHTMLでも文字列でもない。 - [link](https://reactjs.org/docs/introducing-jsx.html#why-jsx)
   - JSXはオブジェクトの代わりを成している - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects)
-  - JSXを使わなくてもreactは機能するが、JSXを使うほうがよりセキュリティの質が向上する(DOMがJSXを描画する前に各々の値をセキュアなものに変換する) - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
+  - JSXを使わなくてもreactは機能するが、JSXを使うほうがよりセキュリティの質が向上する(DOMがJSXを描画する前に各々の値をセキュアなものに変換する) - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 
-### inside of each jsx file
+### inside of each jsx file
 
 1. `import React, { Component } from 'react'`
 このコードがいつも1行目に必要。これがReactを呼び出している印
-2. 1.のコードの下にimportしたいファイル(scssやimg, svg)を記述。`<link rel="">`と同じようなことをここでやるイメージ
+2. 1.のコードの下にimportしたいファイル(scssやimg, svg)を記述。`<link rel="">`と同じようなことをここでやるイメージ
 3. Reactで描画したい要素を下記の中に記述
    ```
    **header.jsx**
@@ -72,15 +71,15 @@ App.jsから要素を下記のように分割してコンポーネント化す�
         }
     }
    ```
-   - Component化したい要素をexportしている
+   - Component化したい要素をexportしている
    - render()してreturnされるものがブラウザで表示される内容になる
 
-#### inside of App.js
+### inside of App.js
 
 - ページの親の役目
         - Javaで言うSuperclassがApp.js, Subclassが各コンポーネント
 - `import Header from './components/Header/Header.jsx';` と `<Header />`のコンビがブラウザでheaderの中身を描画している
-- Toppage, Footerも同様
+- Toppage, Footerも同様
 
 #### Sass
 
@@ -92,6 +91,19 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 - TopPage, Header, Footerと同列にArtWorksコンポーネントを作成
 - 「TopPageの子要素」として、TopPageとArtWorksコンポーネントをリンクさせる
   - toppage.jsxに`import ArtWorks from '../ArtWorks/ArtWorks.jsx';`を記述し、`<ArtWorks />`を`<p></p>`にreplaceする
+
+## 5. Add mixins
+
+＠mixinとは？Sassで使える「複数の設定をまとめて行える」便利な機能です。メンテナンスのしやすいCSSの設計も可能です。
+
+- `@mixin`で定義し、`@include`で呼び出す
+- See this link here (Jump to another documents)
+
+参考 : https://qiita.com/nekoneko-wanwan/items/c8498a21ae0e2b2198be
+参考 : https://www.webcreatorbox.com/tech/sass-mixin
+参考 : https://dotinstall.com/lessons/basic_sass/10214
+
+
   
 -----------
 
