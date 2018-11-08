@@ -1,7 +1,41 @@
+@import '../../styles/config.variables';
+
 .ArtWorks{
-    color:blue;
-    width:300px;
-    height:200px;
-    background: cornflowerblue;
 }
 
+.ArtWorks-img{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width:30%;
+    }
+}
+
+.ArtWorks-btn{
+    position: absolute;
+    width: 16rem;
+    padding: 1.8rem 0 1.6rem;
+    font-size: 2rem;
+    background: $colorblack;//variable is imported by config.variables.scss
+    color:white;
+
+    &:hover, &:focus{
+        background:black;
+        transition:.4s background-color;
+    }
+}
+
+.ArtWorks-details{
+    display:flex;
+    align-items:center;
+    
+    h3{
+        font-size:2rem;
+        border-bottom:.2rem solid;
+        width:max-content;
+        margin-right:1.6rem;
+    }
+}
