@@ -103,6 +103,14 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 参考 : https://www.webcreatorbox.com/tech/sass-mixin
 参考 : https://dotinstall.com/lessons/basic_sass/10214
 
+## 6. Eject for expansion and adjustment
+
+nothing to do for now.
+
+## 7. Make details of ArtWorks component
+
+画像は`import lipstick from './../../assets/img/lipstick.png';`でインポートし、
+`<img src={lipstick} alt="lipstick" />`で呼び出す
 
   
 -----------
