@@ -49,7 +49,14 @@ export default class ArtWorks extends Component {
                 </div>
                 <div className="Artworks-details">
                     <h3>{title}</h3>
-                    <p>{categories}</p>
+                    <span>
+                        {/* importしてないのにcategoryが表示されているのはなぜ？ */}
+                        {categories.map((category) => (
+                            <span key={category} className="Artworks-category">
+                                {category}
+                            </span>
+                        ))} 
+                    </span>
                 </div>
             </div>
         )

@@ -1,3 +1,4 @@
+@import './styles/config.mixins';
 @mixin break($size){
   $breakpoints:(
     xs:320px,
@@ -17,9 +18,15 @@
   }
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+
+  &:before, &:after{
+    box-sizing: inherit;
+  }
+
 }
+
 body{
   width:100%;
   height:100%;
@@ -53,4 +60,23 @@ button, a{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+$container-width-xs:55rem;
+$container-width-sm:72rem;
+$container-width-md:96rem;
+$container-width-lg:112rem;
+$container-width-xl:128rem;
+
+.App{
+  margin:0 auto;
+  padding: 0 1.6rem;
+  max-width: $container-width-md;
+  @include break(sm){
+    padding: 0 1.6rem;
+  }
+
+  @include break(md){
+    padding: 0 2rem;
+  }
 }

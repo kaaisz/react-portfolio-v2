@@ -1,9 +1,14 @@
+@import '../../styles/config.mixins';
+
 @charset 'UTF-8';
 .TopPage{
-    display: flex;
-    height:100vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap:4rem;
     text-align: center;
     background:white;
-    align-items: center;
-    justify-content: center;
+
+    @include break(md){
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
