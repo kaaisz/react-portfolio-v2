@@ -109,9 +109,12 @@ nothing to do for now.
 
 ## 7. Make details of ArtWorks component
 
-画像は`import lipstick from './../../assets/img/lipstick.png';`でインポートし、
+- 画像は `import lipstick from './../../assets/img/lipstick.png';` でインポートし、
 `<img src={lipstick} alt="lipstick" />`で呼び出す
 
+- ArtWorks.scssで呼び出している変数`$colorblack`は、config.variables.scssで作成しているものをinvokeしている
+
+## 8. Set hover state
   
 -----------
 
