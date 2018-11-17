@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import lipstick from './../../assets/img/lipstick.png';
 import './ArtWorks.scss';
 
 export default class ArtWorks extends Component {
@@ -30,13 +29,17 @@ export default class ArtWorks extends Component {
         ?? ここの{ isHovered }で定義し直しているのはstateを関数化して割り当てやすくするためと想定している
         でも、この{ isHovered }がcurlybraceで囲まれているのはなぜ？
         */
+        //下記の値は不変のためstateではなくpropsを使う
+        //?? propsをここで使う理由は？他のコンポーネントに渡す理由は？
+        const { imageUrl, title, categories } = this.props;
 
         return (
             // contents which you want to appear on browser
             // ?? 下記のonMouseOver, onMouseLeaveはDOM Eventで定義できるonmouseover, onmouseleaveと同じもの？
             <div className="ArtWorks" onMouseOver={this.handleHoverIn} onMouseLeave={this.handleHoverOut}>
                 <div className="ArtWorks-img">
-                    <img src={lipstick} alt="lipstick" />
+                    {/* propsから渡ってきたimageUrl */}
+                    <img src={imageUrl} alt="lipstick" />
                     {
                         //if isHovered was true, "see details" will also appear
                         isHovered && (
@@ -45,8 +48,8 @@ export default class ArtWorks extends Component {
                     }
                 </div>
                 <div className="Artworks-details">
-                    <h3>Title</h3>
-                    <p>Categories</p>
+                    <h3>{title}</h3>
+                    <p>{categories}</p>
                 </div>
             </div>
         )
