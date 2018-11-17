@@ -26,7 +26,8 @@ That's it for installing sass! It's super easy🌟
 
 ## 3. Componentization from App.js to Header, Footer and Toppage
 
-App.jsから要素を下記のように分割してコンポーネント化する。**ファイルは「components」というディレクトリを作りそこへ格納する**
+App.jsから要素を下記のように分割してコンポーネント化する。  
+**ファイルは「components」というディレクトリを作りそこへ格納する**
 
 - ファイル構成
 
@@ -48,14 +49,14 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 このコードがいつも1行目に必要。これがReactを呼び出している印
 1. 1.のコードの下にimportしたいファイル(scssやimg, svg)を記述。`<link rel="">`と同じようなことをここでやるイメージ
 2. Reactで描画したい要素を下記の中に記述
-   `
+   ```
    **header.jsx**
    export default class Header extends
    Component{
         render(){
             return(
                 //contents which you want to appear on browser
-                <header className="Header">
+                <header className="Header">
                     <h1 className="Title">Artworks by SZDP</h1>
                     <ul className="Menu">
                         <li>Top</li>
@@ -68,9 +69,9 @@ App.jsから要素を下記のように分割してコンポーネント化す�
             )
         }
     }
-   `
+   ```
    - Component化したい要素をexportしている
-   - render()してreturnされるものがブラウザで表示される内容になる
+   - render()してreturnされるものがブラウザで表示される内容になる
 
 ### inside of App.js
 
@@ -96,10 +97,9 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 
 - `@mixin`で定義し、`@include`で呼び出す
 - See this link here (Jump to another documents)
-
-参考 : https://qiita.com/nekoneko-wanwan/items/c8498a21ae0e2b2198be
-参考 : https://www.webcreatorbox.com/tech/sass-mixin
-参考 : https://dotinstall.com/lessons/basic_sass/10214
+  - 参考 : https://qiita.com/nekoneko-wanwan/items/c8498a21ae0e2b2198be
+  - 参考 : https://www.webcreatorbox.com/tech/sass-mixin
+  - 参考 : https://dotinstall.com/lessons/basic_sass/10214
 
 ## 6. Eject for expansion and adjustment
 
@@ -115,9 +115,11 @@ nothing to do for now.
 ## 8. Set hover state
 \* in progress for explain this
 
-## 9. 
+## 9. Send props from artworks.jsx to Toppage.jsx
 
+## 10. Mapping Array by using constants
 - App.scssの内容はindex.scssへ移植
 - ```constants```というディレクトリの中に```artworks.js```を作成して、そこへ作品一覧となる配列を格納
 - artworks.jsで```artworks```を定義して配列をToppage.jsxへエクスポート
 - Toppage.jsxでは```lipStick```を```{ artworks }```に置換して、配列の一覧を呼び出すようにする
+- categoryもmapから呼び出す
