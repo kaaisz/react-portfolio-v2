@@ -123,3 +123,5 @@ nothing to do for now.
 - artworks.jsで```artworks```を定義して配列をToppage.jsxへエクスポート
 - Toppage.jsxでは```lipStick```を```{ artworks }```に置換して、配列の一覧を呼び出すようにする
 - categoryもmapから呼び出す
+
+## 11. Pass children by making Container component

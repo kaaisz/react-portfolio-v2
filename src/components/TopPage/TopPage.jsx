@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from '../Container/Container.jsx';
 import ArtWorks from '../ArtWorks/ArtWorks.jsx';
 import { artworks } from '../../constants/artworks.js';
 import './TopPage.scss';
@@ -6,8 +7,7 @@ import './TopPage.scss';
 export default class TopPage extends Component {
     render() {
         return (
-            //contents which you want to appear on browser
-            <div className="Container">
+            <Container>{/* invoke Container component */}
                 <div className="TopPage">
                     {/* artworks.jsから、exportしたartworksを呼び出す*/}
                     {artworks.map((artworks) => (
@@ -19,7 +19,7 @@ export default class TopPage extends Component {
                         />
                     ))}
                 </div>
-            </div>
+            </Container>
         )
     }
 }
