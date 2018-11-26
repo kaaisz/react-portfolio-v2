@@ -10,8 +10,10 @@ export default class TopPage extends Component {
             <Container>{/* invoke Container component */}
                 <div className="TopPage">
                     {/* artworks.jsから、exportしたartworksを呼び出す*/}
-                    {artworks.map((artworks) => (
+                    {artworks.map((artworks) => (//artworks = 要素 = object
                         <ArtWorks
+                        // key, imageUrl, title, categoriesはすべてprops
+                        // *ここでpropsを定義している → そのためにArtworkでPropsの定義が可能になる*
                             key={artworks.title}
                             imageUrl={artworks.imageUrl}
                             title={artworks.title}

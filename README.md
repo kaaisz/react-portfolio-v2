@@ -39,9 +39,9 @@ App.jsから要素を下記のように分割してコンポーネント化す�
 - App.jsは全体をオーガナイズする役目
 - .scssファイルは各コンポーネントのディレクトリ内に作成する
 - What is JSX? See the link : [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)  
-  - JSXはHTMLでも文字列でもない。 - [link](https://reactjs.org/docs/introducing-jsx.html#why-jsx)
-  - JSXはオブジェクトの代わりを成している - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects)
-  - JSXを使わなくてもreactは機能するが、JSXを使うほうがよりセキュリティの質が向上する(DOMがJSXを描画する前に各々の値をセキュアなものに変換する) - [link](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
+  - JSXはHTMLでも文字列でもない。 - [See link](https://reactjs.org/docs/introducing-jsx.html#why-jsx)
+  - JSXはオブジェクトの代わりを成している - [See link](https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects)
+  - JSXを使わなくてもreactは機能するが、JSXを使うほうがよりセキュリティの質が向上する(DOMがJSXを描画する前に各々の値をセキュアなものに変換する) - [See link](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 
 ### inside of each jsx file
 
@@ -113,15 +113,64 @@ nothing to do for now.
 - ArtWorks.scssで呼び出している変数`$colorblack`は、config.variables.scssで作成しているものをinvokeしている
 
 ## 8. Set hover state
-\* in progress for explain this
+
+- stateをつけることで状態を変化させる (InitialiseしてからHoverされている状態、されていない状態をそれぞれ定義)
+- Stateで定義した状態をSetstateで更新することで、Virtual DOMに再描画する。
+- このとき、Stateが変化した特定のコンポーネントのみが再描画されるため、同期処理で上から順に読み込まれるのに比べて読み込みが高速化する
+- hoverinした時のstate, hoveroutした時のstateをそれぞれ[onMouseOver, onMouseLeaveというReactのイベント処理にあてはめている](https://reactjs.org/docs/events.html#mouse-events)
+  
 
 ## 9. Send props from artworks.jsx to Toppage.jsx
 
-## 10. Mapping Array by using constants
+### Toppage.jsx(親コンポーネント) 
+- Containerの中でArtworksをPropsとして定義している
+
+```
+<ArtWorks
+    // key, imageUrl, title, categoriesはすべてprops
+    // *ここでpropsを定義している → そのためにArtworkでPropsの定義が可能になる*
+    key={artworks.title}
+    imageUrl={artworks.imageUrl}
+    title={artworks.title}
+    categories={artworks.categories}
+/>
+```
+
+### Artworks.jsx(子コンポーネント)
+
+- レンダリングされたタイミングでthis.propsの中身を見ると、ObjectとしてToppage.jsxで定義したArtworksの中身が渡ってきているのがわかる
+
+```
+console.log(this.props);
+// 中身
+categories: (2) ["Vector", "Artwork"]
+imageUrl: "/static/media/lipstick.76eb63fd.png"
+title: "Lip Stick"
+key: (...)
+```
+
+- 親(Toppage.jsx)から渡ってきたものをpropsとして定義
+
+```{imageUrl: "/static/media/lipstick.76eb63fd.png", title: "Lip Stick", categories: Array(2)}
+const { imageUrl, title, categories } = this.props;
+```
+
+- propsから渡ってきたimageUrl, title, categoriesをそれぞれ、`<img src={imageUrl} />`,`<h3>{title}</h3>`, `<p>{categories}</p>`に置き換える
+
+## 10. Mapping Array from constants
+
 - App.scssの内容はindex.scssへ移植
 - ```constants```というディレクトリの中に```artworks.js```を作成して、そこへ作品一覧となる配列を格納
 - artworks.jsで```artworks```を定義して配列をToppage.jsxへエクスポート
-- Toppage.jsxでは```lipStick```を```{ artworks }```に置換して、配列の一覧を呼び出すようにする
+- Toppage.jsxでは```lipStick```を```{ artworks }```に置換して、mapで配列の一覧を呼び出すようにする
 - categoryもmapから呼び出す
 
+From Saayaman-san below:
+- UrlをConstantsを読める様にするには、ModuleScopePluginを外す [See link (stack overflow)](https://stackoverflow.com/questions/44114436/the-create-react-app-imports-restriction-outside-of-src-directory)
+- 配列をMAPする(key attributeを忘れずに!)
+
+
 ## 11. Pass children by making Container component
+What is children? - [See link](https://reactjs.org/docs/react-api.html)
+Childrenを使うことで、子要素をwrapするような子要素を記述することができる
+
