@@ -166,16 +166,29 @@ const { imageUrl, title, categories } = this.props;
 - categoryもmapから呼び出す
 
 From Saayaman-san below:
+
 - UrlをConstantsを読める様にするには、ModuleScopePluginを外す [See link (stack overflow)](https://stackoverflow.com/questions/44114436/the-create-react-app-imports-restriction-outside-of-src-directory)
 - 配列をMAPする(key attributeを忘れずに!)
 
 
 ## 11. Pass children by making Container component
+
 What is children? - [See link](https://reactjs.org/docs/react-api.html)
 Childrenを使うことで、子要素をwrapするような子要素を記述することができる
 
 ## 12. Add another package (by either NPM or Yarn)
-In NPM
+
+
+|Package name|how to use|resource|
+|----|----|----|
+|react-media|`<media>`コンポーネントがCSSメディアクエリと一致するかどうかを判別し、それに基づいてレンダリングする|https://www.npmjs.com/package/react-media|
+|prop-types|Propsの型情報をJavaScriptのコードとして定義し、コンポーネントに付加情報として加えることで、Propsに渡されたデータをチェックできるようになる|https://www.npmjs.com/package/prop-types|
+|classnames|要素のクラスを動的につけたり外したりする|https://www.npmjs.com/package/classnames|
+|react-router|reactでルーティングするためのデファクトのライブラリ|https://www.npmjs.com/package/react-router|
+|react-router-dom|ルーティングとヒストリーAPIを操作する用途を兼ねる|https://www.npmjs.com/package/react-router-dom|
+
+How to install in NPM and Yarn
+in NPM
 ```
 $ npm i react-media 
 $ npm i prop-types
@@ -183,8 +196,7 @@ $ npm i classnames
 $ npm i react-router
 $ npm i react-router-dom
 ```
-
-In Yarn
+in Yarn
 ```
 $ yarn add react-media 
 $ yarn add prop-types
@@ -192,3 +204,4 @@ $ yarn add classnames
 $ yarn add react-router
 $ yarn add react-router-dom
 ```
+
