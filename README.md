@@ -174,3 +174,21 @@ From Saayaman-san below:
 What is children? - [See link](https://reactjs.org/docs/react-api.html)
 Childrenを使うことで、子要素をwrapするような子要素を記述することができる
 
+## 12. Add another package (by either NPM or Yarn)
+In NPM
+```
+$ npm i react-media 
+$ npm i prop-types
+$ npm i classnames
+$ npm i react-router
+$ npm i react-router-dom
+```
+
+In Yarn
+```
+$ yarn add react-media 
+$ yarn add prop-types
+$ yarn add classnames
+$ yarn add react-router
+$ yarn add react-router-dom
+```
