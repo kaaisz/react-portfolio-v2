@@ -48,3 +48,17 @@
     }
 }
 
+.Artworks-title--active{
+    color: $colorpink;
+    transition: .4s color;
+}
+
+// Unnecessary line because already added conditions in Artworks.jsx
+// .Artworks-category{
+//     &:after{
+//         content: ',';
+//     }
+//     &:last-child:after{
+//         content: '';
+//     }
+// }

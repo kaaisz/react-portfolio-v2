@@ -205,3 +205,50 @@ $ yarn add react-router
 $ yarn add react-router-dom
 ```
 
+## 13. Show hamburger icon by using React-media
+
+1. import **React-media** above in Header.jsx
+
+```
+import Media from 'react-media';
+```
+
+- React-media is for identify media query. if condition inside of `<Media>` was matched, media query will active.
+
+2. Importしたreact-mediaを、三項演算子を使ってマッチした場所に適応させる
+
+```
+<Media query="(min-width:540px)">
+    {/* 540px以上なら以下を表示 (三項演算子を使用して条件分岐している)*/}
+    {(matches) => (matches 
+    ? 
+    <ul className="Header-menu">
+        <li>Top</li>
+        <li>Works</li>
+        <li>Bio</li>
+        <li>Contact</li>
+        <li><a href="http://suzydp.net">suzydp.net</a></li>
+    </ul>
+    :
+    <img 
+        width={30}
+        alt="Menu Icon"
+        src={require("./../../assets/icons/menuIcons.svg")}
+    />
+    )}
+</Media>
+```
+
+## 14. Add active class by using Classname
+
+- **Classname**は、使用することで特定のstateがsetされているときにそのクラスを追加してくれる
+
+1. import **Classname** above in Artworks.jsx
+
+2. `isHovered`が適用されているときに`Artworks-title--active`が追加されるよう、下記のように記述
+
+```
+<h3 className={cx({ "Artworks-title--active": isHovered })}>{title}</h3>
+```
+
+3. Hoverした状態の時に、`Artworks-title--active`クラスのスタイルが適用されるv

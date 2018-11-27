@@ -9,7 +9,7 @@ export default class Header extends Component {
 				<div className="Header-inner">
 					<h1 className="Header-title">Artworks by SZDP</h1>
 					<Media query="(min-width:540px)">
-						{/* 540px以上なら以下を表示 */}
+						{/* 540px以上なら以下を表示 (三項演算子を使用して条件分岐している)*/}
 						{(matches) => (matches 
 						? 
 						<ul className="Header-menu">
@@ -21,7 +21,7 @@ export default class Header extends Component {
 						</ul>
 						:
 						<img 
-							width={20}
+							width={30}
 							alt="Menu Icon"
 							src={require("./../../assets/icons/menuIcons.svg")}
 						/>

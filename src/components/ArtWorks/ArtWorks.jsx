@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+//npm installしたclassnamesを使用するためここでインポート
+import cx from 'classnames';
 import './ArtWorks.scss';
 
 export default class ArtWorks extends Component {
@@ -21,26 +23,17 @@ export default class ArtWorks extends Component {
     });
   }
 
-  // rendering(描画)
   render() {
     // 上記で定義したそれぞれのケースをisHoveredに割り当てる
     //isHovered = this.state.isHoveredと同義
     const { isHovered } = this.state;
-    /*
-    解決：(
-      ?? ここの{ isHovered }で定義し直しているのはstateを関数化して割り当てやすくするためと想定している
-      でも、この{ isHovered }がcurlybraceで囲まれているのはなぜ？
-    )
-    */
     //下記の値は不変のためstateではなくpropsを使う
     //this.props.imageUrl, this.props.title... と同義
-    //解決：(↑↑↑?? propsをここで使う理由は？他のコンポーネントに渡す理由は？)
     console.log(this.props);
     const { imageUrl, title, categories } = this.props;
 
     return (
       // contents which you want to appear on browser
-      // ?? 下記のonMouseOver, onMouseLeaveはDOM Eventで定義できるonmouseover, onmouseleaveと同じもの？
       <div className="ArtWorks" onMouseOver={this.handleHoverIn} onMouseLeave={this.handleHoverOut}>
         <div className="ArtWorks-img">
           {/* propsから渡ってきたimageUrl */}
@@ -53,7 +46,8 @@ export default class ArtWorks extends Component {
           }
         </div>
         <div className="Artworks-details">
-          <h3>{title}</h3>{/* {this.props.title}とすることも可能 */}
+          {/* ↓↓↓この書き方(特に:のあたり)ってどういうこと？isHovered === true のときにclassをaddしている？ */}
+          <h3 className={cx({ "Artworks-title--active": isHovered })}>{title}</h3>{/* {this.props.title}とすることも可能 */}
           <span>
             {/* propsのひとつであるcategoriesの配列をmapを使って呼び出す(解決：importしてないのにcategoryが表示されているのはなぜ？)*/}
             {categories.map((category, index) => {
