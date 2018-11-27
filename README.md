@@ -251,4 +251,27 @@ import Media from 'react-media';
 <h3 className={cx({ "Artworks-title--active": isHovered })}>{title}</h3>
 ```
 
-3. Hoverした状態の時に、`Artworks-title--active`クラスのスタイルが適用されるv
+3. Hoverした状態の時に、`Artworks-title--active`クラスのスタイルが適用される
+
+15. Classname can use for adding default className
+
+デフォルトのクラス名、isHoveredした時のクラス名をそれぞれ記載しておいて、SCSSでまとめて書く、という方法もある
+
+- Artworks.jsx
+
+```
+<h3 className={cx("Artworks-title",{ "Artworks-title--active": isHovered })}>{title}</h3>
+```
+
+- Artworks.scss
+.Artworks-title{
+    /* h3の内容を移植　*/
+    font-size:2rem;
+    width:max-content;
+    margin:1rem auto;
+
+    &--active{
+    color: $colorpink;
+    transition: .4s color;
+    }
+}

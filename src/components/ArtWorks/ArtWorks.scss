@@ -34,13 +34,6 @@
     display:flex;
     align-items:center;
     flex-direction: column;
-    
-    h3{
-        font-size:2rem;
-        border-bottom:.2rem solid;
-        width:max-content;
-        margin-right:1.6rem;
-    }
 
     @include break(md){
         display: flex;
@@ -48,10 +41,17 @@
     }
 }
 
-.Artworks-title--active{
+.Artworks-title{
+    font-size:2rem;
+    width:max-content;
+    margin:1rem auto;
+
+    &--active{
     color: $colorpink;
     transition: .4s color;
+    }
 }
+
 
 // Unnecessary line because already added conditions in Artworks.jsx
 // .Artworks-category{
