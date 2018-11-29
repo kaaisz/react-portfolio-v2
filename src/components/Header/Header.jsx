@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Media from 'react-media';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 export default class Header extends Component {
@@ -12,13 +13,13 @@ export default class Header extends Component {
 						{/* 540px以上なら以下を表示 (三項演算子を使用して条件分岐している)*/}
 						{(matches) => (matches 
 						? 
-						<ul className="Header-menu">
-							<li>Top</li>
-							<li>Works</li>
-							<li>Bio</li>
-							<li>Contact</li>
-							<li><a href="http://suzydp.net">suzydp.net</a></li>
-						</ul>
+						<div className="Header-menu">
+							<NavLink to="/" className="Header-menu-item">Top</NavLink>
+							<NavLink to="/" className="Header-menu-item">Works</NavLink>
+							<NavLink to="/biography" className="Header-menu-item">Bio</NavLink>
+							<NavLink to="/contact" className="Header-menu-item">Contact</NavLink>
+							<a href="http://suzydp.net" className="Header-menu-item">suzydp.net</a>
+						</div>
 						:
 						<img 
 							width={30}

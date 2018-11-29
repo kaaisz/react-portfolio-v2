@@ -26,13 +26,13 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    ul{
+    .Header-menu{
       display: flex;
       align-items: center;
       justify-content: flex-end;
       margin:0 0 0 auto;
 
-      li{
+      .Header-menu-item{
           list-style: none;
           margin-left:1em;
       }
