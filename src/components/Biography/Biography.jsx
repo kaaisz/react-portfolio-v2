@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class AboutPage extends Component{
+export default class Biography extends Component{
   render(){
     return(
       <div>

@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// Add router
 import {BrowserRouter as Router} from 'react-router-dom';
 
-
+// Router
 ReactDOM.render(
   <Router>
     <App />
