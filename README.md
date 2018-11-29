@@ -253,7 +253,7 @@ import Media from 'react-media';
 
 3. Hoverした状態の時に、`Artworks-title--active`クラスのスタイルが適用される
 
-### 15. Classname can use for adding default className
+## 15. Classname can use for adding default className
 
 デフォルトのクラス名、isHoveredした時のクラス名をそれぞれ記載しておいて、SCSSでまとめて書く、という方法もある
 
@@ -279,17 +279,21 @@ import Media from 'react-media';
 }
 ```
 
-### 16. Add Proptypes to check data-type in props
+## 16. Add Proptypes to check data-type in props
 
-#### What's PropTypes?
+### What's PropTypes?
 
 - PropTypesとは、Propsに渡されたデータをチェックできるようにするデバッグツールのこと(FBが提供しているNPM)
 - 仕様書通りにデータ型が渡っているかPropsをチェックする手間はこれで省くことができる
 - この中に定義したこと以外のことを書いている場合はDebug consoleに警告が表示される
 
-### 17. Make Root of links by using React-router
+## 17. Make Root of links by using React-router
 
-#### What's Router?
+### What's Router?
 
 - そもそもルーティングとは： - パケットの配送経路(Route)を決定する動作のこと。
 - 宛先が同じネットワークには直接通信でパケットを送ることができるが、異なるネットワークある端末にパケットを送るにはあらかじめデフォルトゲートウェイに指定されたルーターに中継を依頼する必要がある
+
+## 18. Apply NavLink on header from React-router-dom
+
+- 先のコミットで出てきたRouterを使ってHeaderにLinkをApplyする
