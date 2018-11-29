@@ -253,7 +253,7 @@ import Media from 'react-media';
 
 3. Hoverした状態の時に、`Artworks-title--active`クラスのスタイルが適用される
 
-15. Classname can use for adding default className
+### 15. Classname can use for adding default className
 
 デフォルトのクラス名、isHoveredした時のクラス名をそれぞれ記載しておいて、SCSSでまとめて書く、という方法もある
 
@@ -264,6 +264,8 @@ import Media from 'react-media';
 ```
 
 - Artworks.scss
+
+```
 .Artworks-title{
     /* h3の内容を移植　*/
     font-size:2rem;
@@ -275,3 +277,14 @@ import Media from 'react-media';
     transition: .4s color;
     }
 }
+```
+
+### 16. Add Proptypes to check data-type in props
+
+#### What's PropTypes?
+
+- PropTypesとは、Propsに渡されたデータをチェックできるようにするデバッグツールのこと(FBが提供しているNPM)
+- 仕様書通りにデータ型が渡っているかPropsをチェックする手間はこれで省くことができる
+- この中に定義したこと以外のことを書いている場合はDebug consoleに警告が表示される
+
+### 17.
