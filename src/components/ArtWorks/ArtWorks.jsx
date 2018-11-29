@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import to checking type by PropTypes
+import PropTypes from 'prop-types';
 //npm installしたclassnamesを使用するためここでインポート
 import cx from 'classnames';
 import './ArtWorks.scss';
@@ -71,3 +73,21 @@ export default class ArtWorks extends Component {
     )
   }
 }
+
+// PropTypesとは、Propsに渡されたデータをチェックできるようにするデバッグツールのこと
+// 仕様書通りにデータ型が渡っているかPropsをチェックする手間はこれで省くことができる
+// この中に定義したこと以外のことを書いている場合はDebug consoleに警告が表示される
+
+
+ArtWorks.PropTypes = {// 定義
+  // 定義の中身
+  // imageUrl, titleは文字列型の必須項目
+  imageUrl: PropTypes.string.isRequired,
+  title:PropTypes.string.isRequired,
+  // categoriesは配列
+  categories:PropTypes.array,
+};
+
+ArtWorks.defaultProps = {
+  cateogries:[],
+};
