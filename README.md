@@ -371,3 +371,32 @@ Toggle Navを、smartphone viewの時にactivateさせる準備
 - Header.jsxの`<Navlink>`を`<Fragment>`の中に格納し、それを`const Nav`として定義
 - 定義した`<Nav />`をPC viewとSmartphone viewで分岐している箇所にそれぞれ表示
 - `handleClick`を定義し、`<button>`がクリックされた時に動くようにしておく
+
+## 23. Add styles on Header dropdown
+
+Header.jsx
+
+- smallSizeを引数として渡し、smallSizeがtrueの時に'Header-nav-item--dropdown'が表示されるようにclassnamesでわけている
+
+```
+<NavLink className={cx("Header-menu-item", { 'Header-nav-item--dropdown': smallSize})} />
+```
+
+- So `classnames` is required in this task
+
+
+## 24. Activate dropdown menu when button has been clicked
+
+1. stateでdropdownが出ている時と出ていない時の状態を定義する
+2. buttonがクリックされた時にsetStateして、dropdownが表示されるようにする
+    - (この時、前のDropdownの状態から変化させたいので、`!prevState.showDropdown`とする 
+
+3. Dropdownのstateが初期状態から変更されている時に、dropdownmenuを表示させる = ボタンで開閉するようにする
+
+```
+{this.state.showDropdown && 
+    <div className="Header-dropdown-menu">
+        <Nav smallSize={true} />
+    </div>
+}
+```
