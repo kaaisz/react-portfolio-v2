@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        {/* importしたroute, switchを読み込む */}
         <Switch>
           <Route exact path="/" component={TopPage} />
           <Route exact path="/" component={Biography} />

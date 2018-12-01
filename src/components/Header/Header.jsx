@@ -14,11 +14,35 @@ export default class Header extends Component {
 						{(matches) => (matches 
 						? 
 						<div className="Header-menu">
-							<NavLink to="/" className="Header-menu-item">Top</NavLink>
-							<NavLink to="/" className="Header-menu-item">Works</NavLink>
-							<NavLink to="/biography" className="Header-menu-item">Bio</NavLink>
-							<NavLink to="/contact" className="Header-menu-item">Contact</NavLink>
-							<a href="http://suzydp.net" className="Header-menu-item">suzydp.net</a>
+							<NavLink 
+								exact
+								to="/" 
+								className="Header-menu-item"
+								activeClassName="Header-menu-item--active">
+								Top
+							</NavLink>
+							<NavLink 
+								to="/" 
+								className="Header-menu-item"
+								activeClassName="Header-menu-item--active">
+								Works
+							</NavLink>
+							<NavLink 
+								to="/biography" 
+								className="Header-menu-item"
+								activeClassName="Header-menu-item--active">
+								Bio
+							</NavLink>
+							<NavLink to="/contact" 
+								className="Header-menu-item"
+								activeClassName="Header-menu-item--active">
+								Contact
+							</NavLink>
+							<a href="http://suzydp.net" 
+								className="Header-menu-item"
+								activeClassName="Header-menu-item--active">
+								suzydp.net
+							</a>
 						</div>
 						:
 						<img 

@@ -51,7 +51,7 @@ export default class ArtWorks extends Component {
           {/* ↓↓↓この書き方(特に:のあたり)ってどういうこと？isHovered === true のときにclassをaddしている？ */}
           <h3 className={cx("Artworks-title",{ "Artworks-title--active": isHovered })}>{title}</h3>{/* {this.props.title}とすることも可能 */}
           <span>
-            {/* propsのひとつであるcategoriesの配列をmapを使って呼び出す(解決：importしてないのにcategoryが表示されているのはなぜ？)*/}
+            {/* propsのひとつであるcategoriesの配列をmapを使って呼び出す*/}
             {categories.map((category, index) => {
               if (index < categories.length - 1) {
                 return (
