@@ -8,9 +8,10 @@ export default class Header extends Component {
 		return (
 			<header className="Header">
 				<div className="Header-inner">
-					<h1 className="Header-title">Artworks by SZDP</h1>
+					<h1 className="Header-title"><NavLink exact to="/">Artworks by SZDP</NavLink></h1>
 					<Media query="(min-width:540px)">
 						{/* 540px以上なら以下を表示 (三項演算子を使用して条件分岐している)*/}
+						{/* Header.jsx内のNavlinkのpathと、App.jsのPathが一致すること */}
 						{(matches) => (matches 
 						? 
 						<div className="Header-menu">
@@ -22,7 +23,7 @@ export default class Header extends Component {
 								Top
 							</NavLink>
 							<NavLink 
-								to="/" 
+								to="/works/" 
 								className="Header-menu-item"
 								activeClassName="Header-menu-item--active">
 								Works

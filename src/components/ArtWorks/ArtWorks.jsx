@@ -32,7 +32,7 @@ export default class ArtWorks extends Component {
     //下記の値は不変のためstateではなくpropsを使う
     //this.props.imageUrl, this.props.title... と同義
     console.log(this.props);
-    const { imageUrl, title, categories } = this.props;
+    const { imageUrl, title, categories, id } = this.props;
 
     return (
       // contents which you want to appear on browser

@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer.jsx';
 import TopPage from './components/TopPage/TopPage.jsx';
 import Biography from './components/Biography/Biography.jsx';
 import ContactPage from './components/ContactPage/ContactPage.jsx';
+import WorksPage from './components/WorksPage/WorksPage.jsx';
 import './App.scss';
 
 class App extends Component {
@@ -13,10 +14,12 @@ class App extends Component {
       <div className="App">
         <Header />
         {/* importしたroute, switchを読み込む */}
+        {/* Header.jsx内のNavlinkのpathと、App.jsのPathが一致すること */}
         <Switch>
           <Route exact path="/" component={TopPage} />
-          <Route exact path="/" component={Biography} />
-          <Route exact path="/" component={ContactPage} />
+          <Route path="/works/:id" component={WorksPage} />
+          <Route path="/biography" component={Biography} />
+          <Route path="/contact" component={ContactPage} />
         </Switch>
         <Footer />
       </div>

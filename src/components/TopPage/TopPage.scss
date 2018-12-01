@@ -1,12 +1,15 @@
 @import '../../styles/config.mixins';
 
-@charset 'UTF-8';
 .TopPage{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap:4rem;
     text-align: center;
     background:white;
+
+    a:hover{
+        border-bottom:none;
+    }
 
     @include break(md){
         grid-template-columns: repeat(2, 1fr);

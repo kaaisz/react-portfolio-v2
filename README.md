@@ -291,9 +291,27 @@ import Media from 'react-media';
 
 ### What's Router?
 
-- そもそもルーティングとは： - パケットの配送経路(Route)を決定する動作のこと。
-- 宛先が同じネットワークには直接通信でパケットを送ることができるが、異なるネットワークある端末にパケットを送るにはあらかじめデフォルトゲートウェイに指定されたルーターに中継を依頼する必要がある
+そもそもReactにおけるルーティングとは
+
+- 前提 : React = シングルページアプリケーション。
+- ここでいうルーティングとは、遷移する先に合わせてPathを振り分ける処理のことで、Reactではこれをしなくてもアプリとしての動作にはなんの問題もない
+- ただし、ユーザーの視認性や現在いるページの把握、ひいてはページ遷移を容易に行う上では必要となってくるものである。
+- 例 : instagram - ルーティングがなされることで各ポストやユーザーページへのジャンプを可能にしているが、なくても動作する。ただし、ルーティングされていない場合はわざわざTOPからアクセスし直さなくてはならない手間が生じる
+- Vue.js, Angular.jsも組み立て方は違うが同様の動きをする
 
 ## 18. Apply NavLink on header from React-router-dom
 
 - 先のコミットで出てきたRouterを使ってHeaderにLinkをApplyする
+- こうすると、リンクをクリックした際にNavLinkで設定したパスにジャンプする
+
+## 19. Add active CSS on header
+
+- 現在いるページのHeaderリンクに色がつくようにする
+- NavLinkに`activeClassName="Header-menu-item--active"`をつけて、LinkがActive(=現在いる場所)だった場合の条件を付加する
+
+## 20. Link to each Artworks page by creating new artworks pages
+
+- `WorksPage.jsx`を作成(各ページのデータを引っ張ってくることになるので、constantsに格納した`artworks.js`が必要)
+- App.jsでWorksPage.jsxのルーティングも行う(その際にIDで各ページを分ける必要がある)
+- TopPage.*jsxで作成した各Artworkのリンクにもidを付与する必要があるので、mapには`id={index}`を付加
+- `<NavLink to={`/works/${index}`}>`として、idが末尾についた時にその場所にリンクできるようにする

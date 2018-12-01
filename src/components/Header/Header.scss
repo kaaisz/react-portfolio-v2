@@ -19,6 +19,9 @@
       @include break(md){
         font-size: 2rem;
       }
+      a:hover{
+        border:none;
+      } 
   }
   
   .Header-inner{
