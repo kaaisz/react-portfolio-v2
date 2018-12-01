@@ -2,13 +2,22 @@ import React, { Component, Fragment } from 'react';
 import Media from 'react-media';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
-import './Header.scss';
+import './Header.scss'
 
 export default class Header extends Component {
+
+	// initialize state to show dropdown menu
+	state = {
+		showDropdown: false
+	}
 
 	// define handleClick to open button in Smartphone view
 	handleClick = () =>{
 		console.log("Clicked!");
+		// ??ここに引数を使った理由は？
+		this.setState((prevState) => ({
+			showDropdown: !prevState.showDropdown
+		}))
 	}
 
 	render() {
@@ -34,10 +43,12 @@ export default class Header extends Component {
 											src={require("./../../assets/icons/menuIcons.svg")}
 										/>
 									</button>
-									<div className="Header-dropdown-menu">
-										{/* Place <Nav /> inside of dropdown-menu class */}
-										<Nav smallSize={true}/>
-									</div>
+									{/* Dropdownのstateが初期状態から変更されている時に、dropdownmenuを表示させる = ボタンで開閉する */}
+									{this.state.showDropdown && 
+										<div className="Header-dropdown-menu">
+											<Nav smallSize={true} />
+										</div>
+									}
 								</div>
 							)
 						)}
