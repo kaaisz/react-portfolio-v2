@@ -1,23 +1,26 @@
 .Footer{
-    padding:2em;
-    background: transparent;
-    text-align: left;
-    border-top:2px solid rgba(44, 40, 52, .4);
-    ul{
-        display: flex;
-        padding: 0;
-    }
+  padding:2em;
+  background: transparent;
+  text-align: left;
+  border-top:2px solid rgba(44, 40, 52, .4);
+  ul{
+    display: flex;
+    padding: 0;
+  }
 
-    li{
-        margin-right:1.5em;
-        list-style: none;
-    }
+  li{
+    margin-right:1.25em;
+    list-style: none;
+    font-size:1.75rem;
+  }
 
-    li, a{
-        color:black;
-    }
+  li, a{
+    color:black;
+    transition: all .2s;
+  }
 
-    a:hover{
-        border-bottom:1px solid black;
-    }
+  a:hover{
+    border:none;
+    opacity: .5;
+  }
 }

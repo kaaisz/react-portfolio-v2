@@ -6,7 +6,13 @@ import TopPage from './components/TopPage/TopPage.jsx';
 import Biography from './components/Biography/Biography.jsx';
 import ContactPage from './components/ContactPage/ContactPage.jsx';
 import WorksPage from './components/WorksPage/WorksPage.jsx';
+// add font-awesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 import './App.scss';
+
+// add library fab to export to other component
+library.add(fab);
 
 class App extends Component {
   render() {
@@ -28,3 +34,4 @@ class App extends Component {
 }
 
 export default App;
+

@@ -315,3 +315,5 @@ import Media from 'react-media';
 - App.jsでWorksPage.jsxのルーティングも行う(その際にIDで各ページを分ける必要がある)
 - TopPage.*jsxで作成した各Artworkのリンクにもidを付与する必要があるので、mapには`id={index}`を付加
 - `<NavLink to={`/works/${index}`}>`として、idが末尾についた時にその場所にリンクできるようにする
+
+[See code](https://github.com/suzydp/react-portfolio-v2/commit/bf2da82430c553688b0e0ef04934a42d6756ca89)
