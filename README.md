@@ -317,3 +317,57 @@ import Media from 'react-media';
 - `<NavLink to={`/works/${index}`}>`として、idが末尾についた時にその場所にリンクできるようにする
 
 [See code](https://github.com/suzydp/react-portfolio-v2/commit/bf2da82430c553688b0e0ef04934a42d6756ca89)
+
+## 21. Add Font-Awesome Icons
+
+I did this task with [Font-Awesome official documentation](https://fontawesome.com/how-to-use/on-the-web/using-with/react) and [NPM documentation](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+
+### 1. Add font-awesome packages
+
+in NPM
+```
+/* fundamental */
+$ npm i --save @fortawesome/fontawesome-svg-core
+$ npm i --save @fortawesome/free-solid-svg-icons
+$ npm i --save @fortawesome/react-fontawesome
+
+/* to add free editions of font-awesome */
+$ npm i --save @fortawesome/free-brands-svg-icons
+$ npm i --save @fortawesome/free-regular-svg-icons
+```
+
+in Yarn
+```
+$ yarn add @fortawesome/fontawesome-svg-core
+$ yarn add @fortawesome/free-solid-svg-icons
+$ yarn add @fortawesome/react-fontawesome
+```
+
+### 2. import to App.js
+
+```
+import ReactDOM from 'react-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fab)
+```
+
+### 3. use on Footer.jsx
+
+```
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+...
+<FontAwesomeIcon icon={['fab', 'linkedin']} />
+<FontAwesomeIcon icon={['fab', 'facebook']} />
+```
+
+## 22. Preparation for toggle navigation on Smartphone
+
+Toggle Navを、smartphone viewの時にactivateさせる準備
+
+- Header.jsxの`<Navlink>`を`<Fragment>`の中に格納し、それを`const Nav`として定義
+- 定義した`<Nav />`をPC viewとSmartphone viewで分岐している箇所にそれぞれ表示
+- `handleClick`を定義し、`<button>`がクリックされた時に動くようにしておく
