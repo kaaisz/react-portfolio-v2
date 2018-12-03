@@ -12,6 +12,7 @@ export default class Header extends Component {
 	}
 
 	// define handleClick to open button in Smartphone view
+	// ↓handleClickという引数なしのFunctionを、このクラス内だけで触れるように定義する
 	handleClick = () =>{
 		console.log("Clicked!");
 		// ??ここに引数を使った理由は？

@@ -318,6 +318,8 @@ import Media from 'react-media';
 
 [See code](https://github.com/suzydp/react-portfolio-v2/commit/bf2da82430c553688b0e0ef04934a42d6756ca89)
 
+- `componentDidMount()`で、データをセットして表示できるように準備。この時にもしdataがなかった場合は、遷移先で何も表示させない
+
 ## 21. Add Font-Awesome Icons
 
 I did this task with [Font-Awesome official documentation](https://fontawesome.com/how-to-use/on-the-web/using-with/react) and [NPM documentation](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
@@ -400,3 +402,6 @@ Header.jsx
     </div>
 }
 ```
+
+## 25. Make "See details" button to component
+WIP.

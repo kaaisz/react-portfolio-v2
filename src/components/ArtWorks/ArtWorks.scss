@@ -42,9 +42,14 @@
 }
 
 .Artworks-title{
-    font-size:2rem;
-    width:max-content;
+    font-size:1.35rem;
+    width:100%;
     margin:1rem auto;
+    white-space: pre-line;
+
+    @include break(md){
+        font-size: 2rem;
+    }
 
     &--active{
     color: $colorpink;

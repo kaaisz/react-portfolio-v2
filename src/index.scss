@@ -1,3 +1,5 @@
+@import './styles/config.variables';
+
 @mixin break($size){
   $breakpoints:(
     xs:320px,
@@ -42,7 +44,7 @@ a{
   color:#282c34;
   text-decoration: none;
   &:hover{
-    border-bottom:2px solid #282c34;
+    color:$colorpink;
   }
 }
 

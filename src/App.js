@@ -14,7 +14,7 @@ import './App.scss';
 // add library fab to export to other component
 library.add(fab);
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
@@ -22,6 +22,7 @@ class App extends Component {
         {/* importしたroute, switchを読み込む */}
         {/* Header.jsx内のNavlinkのpathと、App.jsのPathが一致すること */}
         <Switch>
+          {/* react routerで定義されているものに基づいてpropsを定義している(おそらく) */}
           <Route exact path="/" component={TopPage} />
           <Route path="/works/:id" component={WorksPage} />
           <Route path="/biography" component={Biography} />
@@ -33,5 +34,6 @@ class App extends Component {
   }
 }
 
-export default App;
+// こう書いてもいい
+// class App extends Component(上) - export default App;(下)
 
